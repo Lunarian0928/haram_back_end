@@ -32,9 +32,9 @@ public class SpcdeInfoService {
                 String apiKey = "Is%2By%2FR%2FvVmo8yO8vXFeiTMmqQtEuNffgv%2FPdYE4GzzEoW5lqf9qey9eGXR3aaA25f9FRDCLQ92OPQD5G1e5VeQ%3D%3D";
                 String url = "http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService/getHoliDeInfo?"
                                 + "solYear=" + solYear
-                                + "&numOfRows=60"
+                                + "&numOfRows=90"
                                 + "&pageNo=1"
-                                + "&totalCount=60"
+                                + "&totalCount=90"
                                 + "&ServiceKey=" + apiKey
                                 + "&_type=json";
 
@@ -63,7 +63,7 @@ public class SpcdeInfoService {
                                         Holiday holiday = new Holiday(
                                                         item.getDateName(),
                                                         Integer.parseInt(dateStr.substring(0, 4)), // ex. 2024
-                                                        Integer.parseInt(dateStr.substring(4, 6)), // ex. 01 -> 1
+                                                        Integer.parseInt(dateStr.substring(4, 6)) - 1, // ex. 01 -> 0
                                                         Integer.parseInt(dateStr.substring(6, 8)) // ex. 01 -> 1
                                         );
                                         holidayRepository.save(holiday);

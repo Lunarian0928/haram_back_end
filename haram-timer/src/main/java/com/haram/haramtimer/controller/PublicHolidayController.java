@@ -1,18 +1,11 @@
 package com.haram.haramtimer.controller;
 
-// RestController
 import org.springframework.web.bind.annotation.RestController;
-// GetMapping
 import org.springframework.web.bind.annotation.GetMapping;
-// PathVariable
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
-// autowired
 import org.springframework.beans.factory.annotation.Autowired;
-// HolidayRepository
 import com.haram.haramtimer.repository.HolidayRepository;
-
-// SpcdeInfoService
 import com.haram.haramtimer.service.SpcdeInfoService;
 
 @RestController
@@ -23,8 +16,8 @@ public class PublicHolidayController {
     @Autowired
     HolidayRepository holidayRepository;
 
-    @GetMapping("/check_holiday?year={year}?month={month}?date={date}")
-    public boolean checkHoliday(@PathVariable int year, @PathVariable int month, @PathVariable int date) {
+    @GetMapping("/check_holiday")
+    public boolean checkHoliday(@RequestParam int year, @RequestParam int month, @RequestParam int date) {
         if (!holidayRepository.existsByYear(year)) {
             spcdeInfoService.saveHolidays(year);
         }

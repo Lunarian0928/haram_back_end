@@ -27,7 +27,7 @@ public class Holiday {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 6)
+    @Column(name = "name", nullable = false, length = 30)
     private String name;
 
     @Column(name = "year", nullable = false)
