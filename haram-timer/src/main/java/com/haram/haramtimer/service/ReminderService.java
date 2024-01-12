@@ -58,6 +58,12 @@ public class ReminderService {
         return reminderRepository.findAll();
     }
 
+    public Reminder getReminderById(Long id) {
+        Optional<Reminder> optionalReminder = reminderRepository.findById(id);
+        Reminder reminder = optionalReminder.get();
+        return reminder;
+    }
+
     public boolean deleteReminder(Long id) {
         try {
             reminderRepository.deleteById(id);

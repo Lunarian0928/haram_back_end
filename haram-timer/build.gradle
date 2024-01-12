@@ -46,8 +46,11 @@ dependencies {
     // Spring Boot Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation 'com.sun.mail:javax.mail:1.6.2' // or the latest version available
+    // javax mail
+	implementation 'com.sun.mail:javax.mail:1.6.2'
 
+    // spring-boot-starter-webflux
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 }
 
 tasks.named('test') {

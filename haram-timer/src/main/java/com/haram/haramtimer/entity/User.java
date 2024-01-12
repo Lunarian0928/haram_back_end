@@ -1,7 +1,6 @@
 package com.haram.haramtimer.entity;
 
 // lombok
-import lombok.ToString; // toString() 생략
 import lombok.Getter; // get 메소드 생성
 import lombok.Setter; // set 메소드 생성
 import lombok.Builder; // builder 패턴 자동 생성
@@ -17,7 +16,6 @@ import jakarta.persistence.GenerationType; // 기본 키 값에 대한 생성 �
 import jakarta.persistence.Column; // 열 지정
 
 // 여행지 테이블
-@ToString
 @Getter
 @Setter
 @Builder

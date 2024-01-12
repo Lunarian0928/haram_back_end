@@ -1,13 +1,14 @@
 package com.haram.haramtimer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 // RestController
 import org.springframework.web.bind.annotation.RestController;
+// PostMapping
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import jakarta.mail.MessagingException;
+
+// EmailService
 import com.haram.haramtimer.service.EmailService;
 
 @RestController

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 // GetMapping
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 // PostMapping
 import org.springframework.web.bind.annotation.PostMapping;
 // RequestBody
@@ -26,6 +25,8 @@ import com.haram.haramtimer.entity.Reminder;
 import com.haram.haramtimer.service.ReminderService;
 // ReminderRequest
 import com.haram.haramtimer.request.ReminderRequest;
+// ReminderCheckRequest
+import com.haram.haramtimer.request.ReminderCheckRequest;
 // ReminderDeleteRequest
 import com.haram.haramtimer.request.ReminderDeleteRequest;
 // ReminderUpdateRequest
@@ -69,6 +70,11 @@ public class ReminderController {
     @GetMapping("/read")
     public List<Reminder> readAllReminders() {
         return reminderService.getAllReminders();
+    }
+
+    @PostMapping("/read_by_id")
+    public Reminder readReminderById(@RequestBody ReminderCheckRequest reminderCheckRequest) {
+        return reminderService.getReminderById(reminderCheckRequest.getId());
     }
 
     @PostMapping("/delete")
