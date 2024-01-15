@@ -51,6 +51,12 @@ dependencies {
 
     // spring-boot-starter-webflux
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // opencsv
+    implementation 'com.opencsv:opencsv:5.5'
+
+    // for NonNull
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
 
 tasks.named('test') {
